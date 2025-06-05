@@ -229,7 +229,7 @@ Note: we provide two versions of our models -- "NeurIPS24" and "Compressed." The
 
 ### Compressed -- Corrected Compressed Models
 | Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  dense .ply | compressed.pkl |
-|:-----:|:----------:|:------:|:-------:|:--------------:|-----:|-----:|
+|:-----:|:----------:|:------:|:-------:|:--------------:|-----:|
 | coffee-martini | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
 | cook-spinach | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
 | cut-roasted-beef | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
