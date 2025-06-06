@@ -217,26 +217,26 @@ We provide pre-trained models for the [N3DV dataset](https://github.com/facebook
 
 Note: we provide two versions of our models -- "NeurIPS24" and "Compressed." The "NeurIPS24" version includes only the dense .ply files corresponding to the training runs reported in the paper, while the "Compressed" version contains both dense .ply files and compressed .pkl representations. We identified and corrected a bug before code release that affected the rendering from the compressed .pkl files. This fix has resulted in a slight change in the results (we include a training flag, ```--use_xyz_legacy``` to train with or without the fix).
 
-### NeurIPS24 -- Paper Models
-| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  Per-frame models (.ply) | 
-|:-----:|:----------:|:------:|:-------:|-----:|
-| coffee-martini | 28.31 | 0.916 | 0.155 |  download |
-| cook-spinach | 33.31 | 0.955 | 0.134 |  download | 
-| cut-roasted-beef | 33.64 | 0.958 | 0.132 |  download | 
-| sear-steak | 33.95 | 0.962 | 0.125 |  download | 
-| flame-steak | 34.16 | 0.962 | 0.125 |  download | 
-| flame-salmon | 29.17| 0.923 | 0.144 |  download | 
+### NeurIPS24 -- Paper Models [(download)](https://github.com/NVlabs/queen/releases/tag/v1.0-neurips24)
+| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ | 
+|:-----:|:----------:|:------:|:-------:|
+| coffee-martini | 28.31 | 0.916 | 0.155 |
+| cook-spinach | 33.31 | 0.955 | 0.134 | 
+| cut-roasted-beef | 33.64 | 0.958 | 0.132 | 
+| sear-steak | 33.95 | 0.962 | 0.125 | 
+| flame-steak | 34.16 | 0.962 | 0.125 | 
+| flame-salmon | 29.17| 0.923 | 0.144 | 
 
-### Compressed -- Corrected Compressed Models
+### Compressed -- Corrected Compressed Models  [(download)](https://github.com/NVlabs/queen/releases/tag/v1.0-compressed)
 
-| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  Per-frame models (.ply and .pkl) | 
-|:-----:|:----------:|:------:|:-------:|:--------------:|
-| coffee-martini | 28.22 | 0.915 | 0.156 |  download | 
-| cook-spinach | 33.33 | 0.956 | 0.134 |  download |
-| cut-roasted-beef | 33.49 | 0.958 | 0.133 |  download |
-| sear-steak | 33.94 | 0.962 | 0.126 |  download |
-| flame-steak | 34.17 | 0.962 | 0.126 |  download |
-| flame-salmon | 28.93 | 0.922 | 0.145 |  download |
+| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  
+|:-----:|:----------:|:------:|:-------:|
+| coffee-martini | 28.22 | 0.915 | 0.156 | 
+| cook-spinach | 33.33 | 0.956 | 0.134 |
+| cut-roasted-beef | 33.49 | 0.958 | 0.133 |
+| sear-steak | 33.94 | 0.962 | 0.126 |
+| flame-steak | 34.17 | 0.962 | 0.126 |
+| flame-salmon | 28.93 | 0.922 | 0.145 |
 
 ---
 
