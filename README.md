@@ -213,29 +213,30 @@ If you provided any additional command-line arguments during training to adjust 
 
 ## 📋 Pre-trained Models
 
-We provide pre-trained models for the [N3DV dataset](https://github.com/facebookresearch/Neural_3D_Video). The provided models are subject to the Creative Commons — Attribution-NonCommercial-ShareAlike 4.0 International — CC BY-NC-SA 4.0 License terms. The download links for these models are provided in the table below, or on the Models page of this repo. Please use the ["render from compressed"](#rendering-from-compressed) instructions to render from the compressed pkl's. 
+We provide pre-trained models for the [N3DV dataset](https://github.com/facebookresearch/Neural_3D_Video). The provided models are subject to the Creative Commons — Attribution-NonCommercial-ShareAlike 4.0 International — CC BY-NC-SA 4.0 License terms. The download links for these models are provided in the table below, or on [the Models documentation](docs/models.md). Please use the ["render from compressed"](#rendering-from-compressed) instructions to render from the compressed pkl's. 
 
 Note: we provide two versions of our models -- "NeurIPS24" and "Compressed." The "NeurIPS24" version includes only the dense .ply files corresponding to the training runs reported in the paper, while the "Compressed" version contains both dense .ply files and compressed .pkl representations. We identified and corrected a bug before code release that affected the rendering from the compressed .pkl files. This fix has resulted in a slight change in the results (we include a training flag, ```--use_xyz_legacy``` to train with or without the fix).
 
 ### NeurIPS24 -- Paper Models
-| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  dense .ply | compressed.pkl |
-|:-----:|:----------:|:------:|:-------:|-----:|-----:|
-| coffee-martini | 28.31 | 0.916 | 0.155 |  download | - |
-| cook-spinach | 33.31 | 0.955 | 0.134 |  download | - |
-| cut-roasted-beef | 33.64 | 0.958 | 0.132 |  download | - |
-| sear-steak | 33.95 | 0.962 | 0.125 |  download | - |
-| flame-steak | 34.16 | 0.962 | 0.125 |  download | - |
-| flame-salmon | 29.17| 0.923 | 0.144 |  download | - |
+| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  Per-frame models (.ply) | 
+|:-----:|:----------:|:------:|:-------:|-----:|
+| coffee-martini | 28.31 | 0.916 | 0.155 |  download |
+| cook-spinach | 33.31 | 0.955 | 0.134 |  download | 
+| cut-roasted-beef | 33.64 | 0.958 | 0.132 |  download | 
+| sear-steak | 33.95 | 0.962 | 0.125 |  download | 
+| flame-steak | 34.16 | 0.962 | 0.125 |  download | 
+| flame-salmon | 29.17| 0.923 | 0.144 |  download | 
 
 ### Compressed -- Corrected Compressed Models
-| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  dense .ply | compressed.pkl |
-|:-----:|:----------:|:------:|:-------:|:--------------:|-----:|
-| coffee-martini | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
-| cook-spinach | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
-| cut-roasted-beef | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
-| sear-steak | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
-| flame-steak | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
-| flame-salmon | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  download | download |
+
+| Scene | PSNR (dB)↑ | SSIM ↑ | LPIPS ↓ |  Per-frame models (.ply and .pkl) | 
+|:-----:|:----------:|:------:|:-------:|:--------------:|
+| coffee-martini | 28.22 | 0.915 | 0.156 |  download | 
+| cook-spinach | 33.33 | 0.956 | 0.134 |  download |
+| cut-roasted-beef | 33.49 | 0.958 | 0.133 |  download |
+| sear-steak | 33.94 | 0.962 | 0.126 |  download |
+| flame-steak | 34.17 | 0.962 | 0.126 |  download |
+| flame-salmon | 28.93 | 0.922 | 0.145 |  download |
 
 ---
 

@@ -1,0 +1,104 @@
+
+model_params:
+    sh_degree: 3
+    flow_loss_type: 'warp'
+    flow_batch: 16
+    flow_scale: 0.8
+    update_mask: "none"
+    update_loss: "mse"
+    gaussian_update_thresh: 1.0e-3
+    pixel_update_thresh: 0.75e-3
+    dilate_size: 48
+    depth_init: False
+    depth_thresh: 0.03
+    adaptive_update_period: 0.65
+    max_frames: 300
+    seed: 0
+    source_path: 'data/immersive/truck'
+
+    gate_temp: 0.5
+    gate_gamma: -0.1
+    gate_eta: 1.1
+    gate_lr: 1.0e-1
+    gate_lambda_l2: 0.0
+    gate_lambda_l0: 0.0
+
+    wandb_tags: 'default'
+    use_wandb: False
+
+quantize_params:
+    f_rest_quant_type: 'sq'
+    f_rest_latent_dim: 12
+    f_rest_latent_scale_norm: 'none'
+    f_rest_ldecode_matrix: 'learnable'
+    f_rest_ldec_std: 1.0e-1
+
+    f_dc_quant_type: 'sq_res'
+    f_dc_latent_dim: 8
+    f_dc_latent_scale_norm: 'none'
+    f_dc_ldecode_matrix: 'learnable'
+    f_dc_ldec_std: 1.0e-4
+
+    rot_quant_type: 'sq_res'
+    rot_latent_dim: 6
+    rot_latent_scale_norm: 'none'
+    rot_ldecode_matrix: 'learnable'
+    rot_ldec_std: 1.0e-2
+
+    op_quant_type: 'sq_res'
+    op_latent_dim: 3
+    op_latent_scale_norm: 'none'
+    op_ldecode_matrix: 'dft'
+    op_ldec_std: 1.0e-4
+
+    sc_quant_type: 'sq_res'
+    sc_latent_dim: 8
+    sc_latent_scale_norm: 'none'
+    sc_ldecode_matrix: 'learnable'
+    sc_ldec_std: 1.0e-3
+
+opt_params_initial:
+    epochs: 350
+    opacity_reset_interval: 1000
+    densify_from_epoch: 60
+    densify_until_epoch: 0.85
+    densify_grad_threshold: 0.00025
+    densification_interval: 10
+    position_lr_max_steps: 16000
+    lambda_flow: 0.0
+    lambda_tv: 0.1
+
+    opacity_lr: 0.05
+    rotation_lr: 0.0005
+    features_dc_lr: 0.005
+    features_rest_lr: 0.00025
+
+    f_rest_ldecs_lr: 1.0e-3
+    f_rest_lr_scaling: 3.0
+
+
+opt_params_rest:
+    epochs_rest: 20
+
+    f_dc_ldecs_lr_rest: 1.0e-3
+    f_dc_lr_scaling_rest: 5.0
+
+    rot_ldecs_lr_rest: 1.0e-3
+    rot_lr_scaling_rest: 10.0
+
+    op_ldecs_lr_rest: 1.0e-4
+    op_lr_scaling_rest: 1.0
+
+    sc_ldecs_lr_rest: 1.0e-4
+    sc_lr_scaling_rest: 10.0
+
+    lambda_flow_rest: 0.0
+    lambda_tv_rest: 0.1
+
+    densify_until_epoch_rest: 0.6
+    densification_interval_rest: 1
+    densify_grad_threshold_rest: 1.00e-3
+    densify_from_epoch_rest: 4
+    percent_dense_rest: 0.01
+    min_opacity_rest: 0.01
+    size_threshold_rest: 20
