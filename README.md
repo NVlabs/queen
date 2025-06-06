@@ -90,6 +90,15 @@ cp ./maxxvit.py /root/miniconda3/lib/python3.11/site-packages/timm/models/maxxvi
 
 We also provide a [Dockerfile](Dockerfile) for training within a working container.
 
+
+### Download weights for MiDaS
+
+For MiDaS, please download their pretrained weights `dpt_beit_large_512.pt` from [their official repo](https://github.com/isl-org/MiDaS). We tested with the V3.1 release.
+
+```
+wget -P MiDaS/weights https://github.com/isl-org/MiDaS/releases/download/v3_1/dpt_beit_large_512.pt
+```
+
 ---
 
 ## Data Preparation
