@@ -50,13 +50,13 @@ For business inquiries, please visit our website and submit the form: [NVIDIA Re
 
 ---
 
-## Environment Setup
+## Code Setup
 
-### Dependencies
+### 0. Dependencies
 
 We have only tested on Linux environments with CUDA 11.8+ compatible systems. 
 
-### Clone the Repo
+### 1. Clone and Setup Repo
 
 Our software has some submodules, please clone the repo recursively. 
 
@@ -69,7 +69,15 @@ mkdir logs
 mkdir output
 ```
 
-### Install with Conda
+### 2. Environment Setup
+
+We suggest using the Dockerfile to reproduce the environment. We also provide a conda environment, b
+
+#### Dockerfile
+
+Please use the [Dockerfile](Dockerfile) for training within a working container. 
+
+#### Conda Environment
 
 ```bash
 # create the conda environment
@@ -86,12 +94,26 @@ pip install ./submodules/gaussian-rasterization-grad
 cp ./maxxvit.py /root/miniconda3/lib/python3.11/site-packages/timm/models/maxxvit.py
 ```
 
-### Dockerfile
+#### Manually patch `maxxvit.py` in `timm`
 
-We also provide a [Dockerfile](Dockerfile) for training within a working container.
+This repo uses an older version of timm which requires a patched version of `maxxvit.py`, following [this issue](https://github.com/huggingface/pytorch-image-models/issues/1530#issuecomment-2084575852).
 
+We include this patched file in the repo (`maxxvit.py`). You’ll need to overwrite the existing file in your environment’s `timm` installation. This step is already included in the Dockerfile and Conda install instructions, but explained in further detail here. 
 
-### Download weights for MiDaS
+Python version and Conda environment paths can vary, so you must locate the correct destination and copy the file to that location:
+
+```
+python -c "import timm; print(timm.__file__)"
+cp maxxvit.py /path/to/timm/models/maxxvit.py
+```
+
+For example, if you’re using Python 3.12 in a Conda env named `queen`:
+
+```
+cp maxxvit.py ~/miniconda3/envs/queen/lib/python3.12/site-packages/timm/models/maxxvit.py
+```
+
+### 3. Download weights for MiDaS
 
 For MiDaS, please download their pretrained weights `dpt_beit_large_512.pt` from [their official repo](https://github.com/isl-org/MiDaS). We tested with the V3.1 release.
 
