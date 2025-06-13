@@ -105,25 +105,55 @@ wget -P MiDaS/weights https://github.com/isl-org/MiDaS/releases/download/v3_1/dp
 
 We assume datasets are organized as follows:
 
+### DyNeRF
 ```
-├── data
+| --- data
 |   | [dataset_directory]
 │     | [scene_name] 
 │   	  | cam01
-|     		  ├── frame_00001.jpg
-│     		  ├── frame_00002.jpg
-│     		  ├── ...
+|            | images
+|     		  | ---0000.png
+│     		  | --- 0001.png
+│     		  | --- ...
 │   	  | cam02
-│     		  ├── frame_00001.jpg
-│     		  ├── frame_00002.jpg
-│     		  ├── ...
+|            | images
+│     		  | --- 0000.png
+│     		  | --- 0001.png
+│     		  | --- ...
 │   	  | ...
 │   	  | sparse_
-│     		  ├── cameras.bin
-│     		  ├── images.bin
-│     		  ├── ...
-│   	  | points3D.ply
+│     		  | --- cameras.bin
+│     		  | --- images.bin
+│     		  | --- ...
+│   	  | points3D_downsample2.ply
 │   	  | poses_bounds.npy
+```
+
+To generate the points3D_downsample2.ply , please use the [multipleviewprogress.sh](https://github.com/hustvl/4DGaussians/blob/master/multipleviewprogress.sh) script from [4DGaussians](https://github.com/hustvl/4DGaussians).
+
+### Google Immersive
+
+```
+| --- data
+|   | [dataset_directory]
+│     | [scene_name] 
+│   	  | camera_0001
+|            | images_scaled_2
+|     		  | ---0000.png
+│     		  | --- 0001.png
+│     		  | --- ...
+│   	  | camera_0001
+|            | images_scaled_2
+│     		 | --- 0000.png
+│     		  | --- 0001.png
+│     		  | --- ...
+│   	  | ...
+│   	  | colmap
+|            | sparse
+|                | 0  
+|     		  | --- points3d.bin
+│     		  | --- cameras.bin
+│     		  | --- images.bin
 ```
 
 If you have a dataset of multi-view videos, please follow the steps to produce the required data:
